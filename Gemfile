@@ -9,6 +9,21 @@ gem 'mysql2'
 gem 'passenger'
 gem 'jquery-ui-bootstrap-rails'
 
+group :development,:test do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-spork'
+  gem 'guard-livereload'
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'spork'
+  gem 'rspec'
+  gem 'cucumber'
+  gem 'database_cleaner'
+  gem 'webrat'
+  gem 'rb-inotify'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
