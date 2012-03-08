@@ -12,3 +12,7 @@
  *= require_tree .
  *= require bootstrap
 */
+
+.container .content{
+  padding-top: 45px;
+}

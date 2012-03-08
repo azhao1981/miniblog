@@ -1,24 +1,14 @@
-<h1>Listing pages</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @pages.each do |page| %>
-  <tr>
-    <td><%= page.title %></td>
-    <td><%= page.body %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="well">
+    <h1><%= page.title %></h1>
+    <div class="row">
+      <%= link_to 'Edit', edit_page_path(page) %>
+      <%= link_to 'Destroy', page, method: :delete %>
+    </div>
+    <%= page.body %>
+  </div>
 <% end %>
-</table>
 
 <br />
 
