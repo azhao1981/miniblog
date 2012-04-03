@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh_CN">
 <head>
   <title>Miniblog</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -11,13 +11,26 @@
   	<div class="fill">
   		<div class="container">
   			<h3> <a href="/" class="brand">Azhao 's Blog</a> </h3>
+  			
   		</div>
+  		<div id="user_nav" class="span4 offset4">
+					<% if user_signed_in? %>
+						Signed in as <%= current_user.email %>. Not you?
+						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+					<% else %>
+						<%= link_to "Sign up", new_user_registration_path %> or
+						<%= link_to "sign in", new_user_session_path %>
+					<% end %>
+				</div>
   	</div>
   </div>
   <div class="container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="content">
       <%= yield %>
     </div>
   </div>
+  <footer> Copyright @ weizhao  2012 -- You need HTML5CSS3 brower support!
 </body>
 </html>
